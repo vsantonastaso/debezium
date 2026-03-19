@@ -25,10 +25,10 @@ public class TruncateTableParserListener extends MySqlParserBaseListener {
     }
 
     @Override
-    public void enterTruncateTable(MySqlParser.TruncateTableContext ctx) {
-        TableId tableId = parser.parseQualifiedTableId(ctx.tableName().fullId());
+    public void enterTruncateTableStatement(MySqlParser.TruncateTableStatementContext ctx) {
+        TableId tableId = parser.parseQualifiedTableId(ctx.tableRef());
         // Be aware the legacy parser is not signaling truncate events
         parser.signalTruncateTable(tableId, ctx);
-        super.enterTruncateTable(ctx);
+        super.enterTruncateTableStatement(ctx);
     }
 }
