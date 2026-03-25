@@ -42,7 +42,7 @@ queries
     ;
 
 query
-    : (simpleStatement | beginWork) SEMICOLON_SYMBOL
+    : (simpleStatement | beginWork) SEMICOLON_SYMBOL?
     ;
 
 simpleStatement
